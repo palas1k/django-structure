@@ -11,6 +11,8 @@ django = "^5.0"
 djangorestframework = "^3.14.0"
 psycopg2 = "^2.9.9"
 django-filter = "^23.4"
+django-split-settings = "^1.2.0"
+pyyaml = "^6.0.1"
 
 
 [build-system]
