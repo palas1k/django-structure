@@ -2,6 +2,15 @@
 install:
 	poetry install
 
+.PHONY: install-pc
+install-pc:
+	poetry run pre-commit uninstall
+	poetry run pre-commit install
+
+.PHONY: lint
+lint:
+	poetry run pre-commit run --all-files
+
 .PHONY: mm
 mm:
 	poetry run python -m core.manage migrate
@@ -19,4 +28,4 @@ sp:
 	poetry run python -m core.manage createsuperuser
 
 .PHONY: upd
-upd: install mm;
+upd: install mm install-pc ;
