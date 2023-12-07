@@ -23,6 +23,19 @@ mk:
 rs:
 	poetry run python -m core.manage runserver
 
+.PHONY: shell
+shell:
+	poetry run python -m core.manage createsuperuser
+
+.PHONY: test
+test:
+	poetry run pytest -v -rs -n auto --show-capture=no
+
+.PHONY: up_depends_only
+up_depends_only: test -f .env
+	touch .env
+	docker compose -f docker-compose.dev.yml up --force-recreate db
+
 .PHONY: sp
 sp:
 	poetry run python -m core.manage createsuperuser

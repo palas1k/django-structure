@@ -56,8 +56,14 @@ WSGI_APPLICATION = 'core.project.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'C:\\Users\\lfd\\PycharmProjects\\django-structure\\db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'django_structure',
+        'USER': 'django_structure',
+        'PASSWORD': 'django_structure',
+        'HOST': 'localhost',
+        'PORT': 5432,
+        'ATOMIC_REQUESTS': True,
+        'CONN_MAX_AGE': 600,
     }
 }
 

@@ -10,7 +10,7 @@ from split_settings.tools import include, optional
 BASE_DIR = Path(__file__).resolve().parent.parent.parent.parent
 
 # Нейминг своих кастомных переменных
-ENVVAR_SETTINGS_PREFIX = 'CORESETTINS_'
+ENVVAR_SETTINGS_PREFIX = 'CORE_SETTING_'
 
 # получается CORESETTINS_LOCAL_SETTINGS_PATH
 LOCAL_SETTINGS_PATH = os.getenv(f'{ENVVAR_SETTINGS_PREFIX}LOCAL_SETTINGS_PATH')
